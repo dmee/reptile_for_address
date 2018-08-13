@@ -9,3 +9,12 @@ exports.readFile = async (filePath) => {
         });
     });
 }
+
+exports.writeFile = async (filePath, data) => {
+    return new Promise(resolve => {
+        fs.writeFile(filePath, data, (err) => {
+            console.info('文件写出成功...');
+            resolve();
+        });
+    });
+};
